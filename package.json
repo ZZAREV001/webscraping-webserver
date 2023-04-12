@@ -1,0 +1,30 @@
+{
+  "name": "car-auction-scraper",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Web scraper for extracting car information from car auction websites",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZZAREV001/car-auction-scraper.git"
+  },
+  "keywords": [
+    "web-scraping",
+    "puppeteer",
+    "car-auction"
+  ],
+  "author": "Zacharie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZZAREV001/car-auction-scraper/issues"
+  },
+  "homepage": "https://github.com/ZZAREV001/car-auction-scraper#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "puppeteer": "^10.4.0"
+  }
+}
