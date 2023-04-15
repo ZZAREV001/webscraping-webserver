@@ -16,6 +16,7 @@ async function fetchCars(url) {
         make: element.querySelector('.make-selector')?.textContent.trim(),
         model: element.querySelector('.model-selector')?.textContent.trim(),
         year: element.querySelector('.year-selector')?.textContent.trim(),
+        price: element.querySelector('.price-selector')?.textContent.trim(),
         // Add more properties as needed
       };
 
