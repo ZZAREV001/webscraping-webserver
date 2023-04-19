@@ -1,8 +1,11 @@
 import puppeteer from 'puppeteer';
 
 async function fetchCars(url) {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+  });
   const page = await browser.newPage();
+  await page.goto(url, { timeout: 60000 });
 
   await page.goto(url, { waitUntil: 'networkidle2' });
 
@@ -13,11 +16,11 @@ async function fetchCars(url) {
 
     carElements.forEach((element) => {
       const car = {
-        make: element.querySelector('.make-selector')?.textContent.trim(),
-        model: element.querySelector('.model-selector')?.textContent.trim(),
-        year: element.querySelector('.year-selector')?.textContent.trim(),
-        price: element.querySelector('.price-selector')?.textContent.trim(),
-        // Add more properties as needed
+        make: element.querySelector('.fa-car + span')?.textContent.trim(),
+        model: element.querySelector('h2 a')?.textContent.trim(),
+        year: element.querySelector('li:nth-child(3)')?.textContent.trim().split(' ')[3],
+        price: element.querySelector('.float-right b.font-weight-bold')?.textContent.trim(),
+        // Add more properties as needed. Previous properties should be changed manually according to webpage we want to scrap.
       };
 
       carsArray.push(car);

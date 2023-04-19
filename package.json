@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "description": "Web scraper for extracting car information from car auction websites",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node --experimental-modules src/index.js"
   },
   "repository": {
     "type": "git",
